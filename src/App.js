@@ -6,15 +6,20 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import Chatbot from './Chatbot';
+import {Provider} from 'react-redux' 
+import store from './store';
+
 
 function App() {
   return (
-    <div className="conteudo">
-      <Header/>
-      <Home/>
-      <Chatbot/>
-      <Footer/>
-    </div>
+    <Provider store={store}>
+      <div className="conteudo">
+        <Header/>
+        <Home/>
+        <Chatbot/>
+        <Footer/>
+      </div>
+    </Provider>
   );
 }
 

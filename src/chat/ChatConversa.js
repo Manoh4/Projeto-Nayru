@@ -1,24 +1,45 @@
 import React, {Component} from 'react'
 import {InputGroup,Input,InputGroupAddon,Button,Alert,Badge} from 'reactstrap'
+import {connect} from 'react-redux'
 
 class ChatConversa extends Component{
+
+    renderMensagem(msg, k){
+        return (
+            <div key={k}>                
+                {
+                    msg.origem == 'user' && <span>
+                        <Badge color='primary'>Você disse: </Badge>
+                        <Alert color='primary'>{msg.texto}</Alert>
+                    </span>
+                }
+
+                {
+                    msg.origem == 'bot' && <span>
+                        <Badge color='warning'>Nayru disse: </Badge>
+                        <Alert color='warning'>{msg.texto}</Alert>
+                    </span>
+                }
+            </div>
+        )
+    }
+
     render(){
         return(
             <div className='chat-conversa'>
-                <Badge color='primary'>
-                    Você disse:
-                </Badge>
-                <Alert color='primary'>
-                    Eu vou conseguir?
-                </Alert>
-                <Badge color='warning'>
-                    Nayru disse:
-                </Badge>
-                <Alert color='warning'>
-                    Você vai conseguir sim!
-                </Alert>
+                {
+                    Object.keys(this.props.mensagens).map(key => {
+                        return this.renderMensagem(this.props.mensagens[key], key)
+                    })
+                }
             </div>
         )
     }
 }
-export default ChatConversa
+
+const mapStateToProps = (state) => {
+    return {
+        mensagens: state.chat.mensagens
+    }
+}
+export default connect(mapStateToProps,null)(ChatConversa)

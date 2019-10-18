@@ -12,6 +12,7 @@
 .chat-conversa{
     position: relative;
     height: 60%;
+    overflow: auto
 }
 
 .chat-mensagem{

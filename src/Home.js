@@ -6,9 +6,9 @@ class Home extends Component {
         return (
             <div className="home">    
                 <p className="App-intro">
-                    Para começar, começe
+                    Chatterbot com conhecimento específico em The Legend of Zelda: A Link to the Past.
+                    
                 </p>
-                <Button color="danger">DANGER!</Button>
             </div>
         )
     }
