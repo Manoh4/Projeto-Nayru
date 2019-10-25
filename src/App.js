@@ -15,7 +15,7 @@ function App() {
     <Provider store={store}>
       <div className="conteudo">
         <Header/>
-        <Home/>
+        {/* <Home/> */}
         <Chatbot/>
         <Footer/>
       </div>

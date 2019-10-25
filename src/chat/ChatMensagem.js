@@ -21,9 +21,12 @@ class ChatMensagem extends Component {
                 texto: e.target.value,
                 origem: 'user'
             }
+            console.log('props', this.props)
             let contexto = {}
-            if(this.props.resposta.data && this.props.resposta.data.context){
-                contexto = this.props.resposta.data.context
+            if(this.props.resposta !== undefined){
+                if(this.props.resposta.data && this.props.resposta.data.context){
+                    contexto = this.props.resposta.data.context
+                }
             }
             this.props.enviaTexto(mensagem)//Mensagem digitada no meu input
             this.props.conversaWatson(mensagem, contexto)
@@ -39,7 +42,7 @@ class ChatMensagem extends Component {
                 <InputGroup>
                     <Input onKeyDown={this.inputEnviaTexto} placeholder='Digite sua mensagem'/>
                     <InputGroupAddon addonType='append'/>
-                    <Button color='success'>Enviar</Button>
+                    {/* <Button color='success'>Enviar</Button> */}
                 </InputGroup>
 
             </div>

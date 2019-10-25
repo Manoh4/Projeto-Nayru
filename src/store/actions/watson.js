@@ -35,7 +35,7 @@ export const conversaWatson = ((mensagem, contexto) => {
         //Chama o backend do Watson (firebase cloud functions)
         const url = 'https://us-central1-nayru-chatterbot.cloudfunctions.net/conversa'
         axios
-        .post(url, {input: mensagem.texto,contexto: contexto})
+        .post(url, {input: {text: mensagem.texto},contexto: contexto})
         .then((data) => {
             dispatch(conversaWatsonSucess(data))
             

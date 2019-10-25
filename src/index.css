@@ -15,20 +15,21 @@ code {
 
 .header {
   grid-area: header;
-  background-color: royalblue;
+  background-color: lightskyblue;
   text-align: center;
-  color: black;
+  color:navy;
 }
 
 .home {
   grid-area: home;
   background-color: white;
+  color: black; 
 }
 
 .chatbot {
   grid-area: chatbot;
-  background-color: powderblue;
-  height: calc(100vh - 170px);
+  background-color: rgb(204, 243, 239);
+  height: calc(100vh - 105px);
 }
 
 .footer {

@@ -1,8 +1,8 @@
 .chat-conteudo{
     display: grid;
     grid-template-rows: 80px auto 80px;
-    height: calc(100vh - 170px);
     padding: 8px;
+    height: calc(100vh - 100px);
 }
 
 .chat-header{
@@ -11,8 +11,8 @@
 
 .chat-conversa{
     position: relative;
-    height: 60%;
-    overflow: auto
+    height: 105%;
+    overflow: auto;
 }
 
 .chat-mensagem{
